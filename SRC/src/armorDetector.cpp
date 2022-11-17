@@ -8,21 +8,13 @@ Parm parm;
 // {
 // }
 
-armorDetector::armorDetector(string matrix) 
+armorDetector::armorDetector() 
 {
-    cv::FileStorage file(matrix,cv::FileStorage::READ);
-    //if (file.isOpened()) 
-    //{
-        // file["Matrix"] >> mat;
         mat = (Mat_<double>(3,3)<< 
 1.032705715359873e+03,0,320,
 0,1.029836994504684e+03,240,
 3.178832185092280e+02,2.673548277123335e+02,1);
-    //}
-    //circle(srcImage,Point(mat.at<double>(0,2),mat.at<double>(1, 2)),4,Scalar(128,0,120),4);
-    // data: [ 1.4137187088093697e+03, 0., 6.6167485552542621e+02, 
-    //        0.,1.4114887861673517e+03, 5.0865060122369590e+02, 
-    //        0., 0., 1. ]
+
 }
 void armorDetector::adjustlightBarRect(RotatedRect& rect,lightBar& light) 
 {

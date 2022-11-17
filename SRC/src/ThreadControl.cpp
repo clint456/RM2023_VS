@@ -3,44 +3,31 @@
 #include "opencv2/core/core.hpp"
 #include <stdio.h>
 #include <iostream>
+#include "../device/camera.hpp"
 #define TEST_CAM
 using namespace cv;
-unsigned char           * g_pRgbBuffer;     //处理后数据缓存区
+
 
 #ifdef TEST_CAM
 void processer::frameLoop() 
 {
-    string cameraMatrixFilename="/home/gs/GS/newArmor2/intrinsics_large.yml";
-    armorDetector detector(cameraMatrixFilename);
-
+    armorDetector detector;
+    Camera camera;
     detector.enemy = RED;   //在这里设定[地方]enemy颜色
-    
+    camera.cameraType = USBDevice;
+    camera.cameraInit();
+   
 	Mat src;
-    VideoCapture cap;
-
-    int deviceID = 0;             // 0 = open default camera
-    int apiID = CAP_ANY;      // 0 = autodetect default API
-    cap.open(deviceID, apiID);
-    if (!cap.isOpened()) {
-        cerr << "ERROR! Unable to open camera\n";
-    }
-    //--- GRAB AND WRITE LOOP
-    cout << "Start grabbing" << endl
-        << "Press any key to terminate" << endl;
-    while (true) 
+  
+    for(;;)
     {
-        // wait for a new frame from camera and store it into 'frame'
-        cap.read(src);
-        // check if we succeeded
-        if (src.empty()) {
-            cerr << "ERROR! blank frame grabbed\n";
-            break;
-        }
+        camera.imgProcess(src);
+       
         imshow("Live", src);
         if (waitKey(5) >= 0)
             break;
-     
-        //flip(src, src, -1);
+
+        //flip(src, src, -1);   //画面反转函数
        
         detector.run(src);
      
@@ -78,3 +65,5 @@ void processer::frameLoop()
         imshow("srcImage",detector.srcImage);
     }
 #endif
+
+
