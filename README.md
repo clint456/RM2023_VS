@@ -1,12 +1,12 @@
 # RM2023_VS
-贵州师范学院Jumper战队2022视觉项目
+贵州师范学院Jumper战队2023视觉项目
 
 ## 简介
 
 1. 硬件配置
 
-- 运算平台：NUC8 i5 
-- 摄像头： Mindvision MV-USB32GC 或者 usb免驱相机
+- 运算平台：x86架构皆可
+- 摄像头： Mindvision MV-USB32GC 或 usb免驱相机
 
 
 2. 实现功能
