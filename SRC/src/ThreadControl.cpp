@@ -20,7 +20,7 @@ void processer::frameLoop()
   
     for(;;)
     {
-        camera.imgProcess(src);
+        camera.process(src);
        
         imshow("Live", src);
         if (waitKey(5) >= 0)

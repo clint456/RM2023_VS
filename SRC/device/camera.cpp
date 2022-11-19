@@ -24,7 +24,7 @@ void Camera::cameraInit()
     }
 }
 
-void Camera::imgProcess(Mat &src)
+void Camera::process(Mat &src)
 {
     if (cameraType == USBDevice)
     {

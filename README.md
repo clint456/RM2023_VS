@@ -15,28 +15,43 @@
 
 3. 部署需要调节的参数有
 
-- 传统视觉相机参数，如曝光，增益等
-- 相机内参数
-- USB转串口设备名字
+- 传统视觉相机参数，如曝光，增益等(相机驱动还未封装完成)
+
+-  [相机内参数](https://mp.weixin.qq.com/s?__biz=MzIxOTczOTM4NA==&mid=2247486828&idx=1&sn=e95d14ae8ce2484a954fd7de11ac5756&chksm=97d7e8fba0a061edd1222333402cad3f10c2806478ab32f321bd73856eb9cae26d1e65111a11&token=467610947&lang=zh_CN#rd)
+
+- USB转串口设备名字 （需要安装驱动，根据自己电脑的环境选择安装【这里链接是win10/win11d的驱动】[驱动下载链接](https://www.wch.cn/downloads/CH341SER_EXE.html)）
+
 - 传统视觉识别参数，如二值化阈值,灯条装甲板几何约束参数
+
+  ![avator](/pic/pic7.png)
+
+- 选择识别红蓝方
+
+  ![avator](/pic/pic6.png)
 
 ## 环境配置
 
 #### Ubuntu 20.04 LTS（此项目目前未部署在linux平台）
-- gcc 7.5.0
 - OpenCV 4.5.5
-- cmake 3.5.0
+
+  [OpenCV官方文档](docs.opencv.org)
+
+- cmake 3.5.0 
+
+  [ cmake学习教程](https://github.com/wzpan/cmake-demo)
 
 #### Windows 11/10 
 - Visual Studio 2022
 - OpenCV 4.6.0  
-环境配置链接教程:
-https://blog.csdn.net/mars_xiaolei/article/details/78759041
+[OpenCV + C++开发环境配置链接教程](https://blog.csdn.net/mars_xiaolei/article/details/78759041)
 
 
 ## 硬件连接
 
 ![avatar](pic/pic2.png)
+
+## 信号连接
+
 ![avatar](pic/pic3.png)
 
 
@@ -73,10 +88,10 @@ https://blog.csdn.net/mars_xiaolei/article/details/78759041
 
 | 规范      | 含义 |示例|
 | ----------- | ----------- |-----------|
-| 首字母大写，单词间大写区分      | 文件名,类名    | ArmorBlob: 即ArmorBlob类|
-| 首字母小写，单词间大写区分   | 函数名        |initHog: 即Hog初始化函数|
-| 首字母小写，单词以下划线区分   | 变量        |lut_table: LUT表格|
-| 全小写，名词为变量，动词为函数   | 一些简单变量以及含义明确的函数        |Kalman类的predict: 卡尔曼滤波预测过程|
+| 首字母大写，单词间大写区分      | 文件名,类名    | ArmorDectector: 即ArmorDectector类 |
+| 首字母小写，单词间大写区分   | 函数名        |cameraInit: 即camera初始化函数|
+| 首字母小写，单词以下划线区分   | 变量        |light_angle: 单个灯条倾斜角|
+| 全小写，名词为变量，动词为函数   | 一些简单变量以及含义明确的函数        |Camera类的process: 相机生产视频帧|
 
 
 ## 如何使用？

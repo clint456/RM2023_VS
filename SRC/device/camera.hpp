@@ -22,7 +22,7 @@ public:
 	VideoCapture cap;
 	CameraType cameraType;
 	void cameraInit();
-	void imgProcess(Mat &src);
+	void process(Mat &src);
 
 
 private:
