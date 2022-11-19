@@ -19,7 +19,7 @@
 
 -  [相机内参数](https://mp.weixin.qq.com/s?__biz=MzIxOTczOTM4NA==&mid=2247486828&idx=1&sn=e95d14ae8ce2484a954fd7de11ac5756&chksm=97d7e8fba0a061edd1222333402cad3f10c2806478ab32f321bd73856eb9cae26d1e65111a11&token=467610947&lang=zh_CN#rd)
 
-- USB转串口设备名字 （需要安装驱动，根据自己电脑的环境选择安装【这里链接是win10/win11d的驱动】[驱动下载链接](https://www.wch.cn/downloads/CH341SER_EXE.html)）
+- USB转串口设备名字 （需要安装驱动，根据自己电脑的环境选择安装【这里链接是win10/win11的驱动】[驱动下载链接](https://www.wch.cn/downloads/CH341SER_EXE.html)）
 
 - 传统视觉识别参数，如二值化阈值,灯条装甲板几何约束参数
 
