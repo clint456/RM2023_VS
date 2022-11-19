@@ -7,7 +7,6 @@
 #define TEST_CAM
 using namespace cv;
 
-
 #ifdef TEST_CAM
 void processer::frameLoop() 
 {
